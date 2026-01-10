@@ -1,0 +1,13 @@
+:root {
+    --yello-shades: linear-gradient(to bottom right, #ffd639, #e7a700);
+    --light-yellow: #FCD12A;
+    --dark-yellow: #FABB18;
+    --white: #FFFFFF;
+    --gray: #EEEEEE;
+    /* --shadows: ; */
+    --color: black;
+    --Poppins: "Poppins";
+    --Jaro: "Jaro";
+    --Shrikhand: "Shrikhand";
+
+}

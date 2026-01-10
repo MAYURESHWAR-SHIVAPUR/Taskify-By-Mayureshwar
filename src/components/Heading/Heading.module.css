@@ -1,0 +1,16 @@
+
+.Heading h1 {
+
+    font-family: var(--Shrikhand);
+    font-size: 2.8rem;
+    margin-top: 15vh;
+    padding: 0 2vw;
+}
+
+.Heading h4 {
+    padding: 0 2vw;
+    font-family: var(--Jaro);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}

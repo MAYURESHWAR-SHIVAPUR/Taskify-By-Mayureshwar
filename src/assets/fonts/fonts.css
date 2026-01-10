@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Jaro";
+    src: url("./Jaro-Regular-VariableFont_opsz.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("./Poppins-Regular.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Shrikhand";
+    src: url("./Shrikhand-Regular.ttf") format("truetype");
+    font-style: normal;
+}

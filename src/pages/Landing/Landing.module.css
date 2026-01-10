@@ -1,0 +1,103 @@
+.Landing_Outer {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.Landing_first {
+    height: 100vh;
+    width: 40%;
+    border-bottom-right-radius: 200%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--yello-shades);
+}
+
+.Landing_first p {
+    width: 80%;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.Landing_Second {
+    width: 50%;
+    height: 100%;
+    display: grid;
+}
+
+.Landing_Second h1 {
+
+    font-family: var(--Shrikhand);
+    font-size: 2.8rem;
+    margin-top: 15vh;
+    padding: 0 2vw;
+}
+
+.Landing_Second h4 {
+    padding: 0 2vw;
+    font-family: var(--Jaro);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.Landing_Second p {
+    text-align: justify;
+    font-weight: 100;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+.Landing_Second a {
+    height: 8vh;
+    width: 20vw;
+    border-radius: 35px;
+    outline: none;
+    border: none;
+    background: var(--yello-shades);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: 15%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+
+    &:hover {
+        /* background-color: black; */
+        color: white;
+        background: black;
+    }
+}
+
+.balls {
+    position: fixed;
+
+}
+
+.balls_Big {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background: var(--yello-shades);
+    position: fixed;
+    left: 30%;
+    top: 10%;
+}
+
+.balls_small {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background: var(--yello-shades);
+    position: fixed;
+    left: 12%;
+    bottom: -8%;
+}
