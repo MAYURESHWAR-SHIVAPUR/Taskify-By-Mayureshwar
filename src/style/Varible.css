@@ -4,10 +4,22 @@
     --dark-yellow: #FABB18;
     --white: #FFFFFF;
     --gray: #EEEEEE;
+    --text-color: black;
     /* --shadows: ; */
     --color: black;
     --Poppins: "Poppins";
     --Jaro: "Jaro";
     --Shrikhand: "Shrikhand";
+    --shadow: #00000059;
 
+
+}
+
+
+:root.dark {
+    --yello-shades: linear-gradient(to bottom right, #626262, #282828);
+    --light-yellow: #303030;
+    --dark-yellow: black;
+    --white: #292929;
+    --text-color: white;
 }

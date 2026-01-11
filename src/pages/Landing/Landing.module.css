@@ -5,6 +5,8 @@
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
+    background-color: var(--white);
+    color: var(--text-color);
 }
 
 .Landing_first {
@@ -72,8 +74,8 @@
 
     &:hover {
         /* background-color: black; */
-        color: white;
-        background: black;
+        color: var(--white);
+        background: var(--text-color);
     }
 }
 

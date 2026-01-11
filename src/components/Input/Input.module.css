@@ -17,6 +17,7 @@
     width: 80%;
     padding: 0 2vw;
     font-size: 1rem;
+    color: var(--text-color);
 }
 
 .Input_Outer button {
@@ -29,11 +30,12 @@
     border: none;
     font-size: 1.3rem;
     font-weight: bolder;
+    color: var(--text-color);
 }
 
 .Error_Message {
     text-align: center;
     color: orangered;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 1rem;
 }

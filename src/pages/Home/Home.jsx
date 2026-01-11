@@ -2,12 +2,44 @@ import React, { useState } from "react";
 import Style from "./Home.module.css";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+import useThemeToggle from "../../features/useTheme";
+
 
 import { useSelector, useDispatch } from "react-redux";
 import { toggleEdit, updateText, toggleComplete, deleteTodo } from "../../features/CounterSlice";
 
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
+
 const Home = () => {
+  const { toggleTheme } = useThemeToggle();
+  
+
+  // animation start
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+
+      tl.from("#form h3,#form label, #form input", {
+        delay: 1,
+        x: -50,
+        opacity: 0,
+        ease: "bounce.out",
+        stagger: 0.2,
+      }).from("#items", {
+        x: -1000,
+        opacity: 0,
+        duration: 1,
+        ease: "back.out"
+      });
+    }
+  );
+
+  // animation end
   const [name] = useState();
   const time = new Date().getHours();
 
@@ -47,7 +79,7 @@ const Home = () => {
           para={`${time < 12 ? "Good Morning" : "Good Evening"} ${name || "User"},`}
         />
 
-        <form className={Style.Home_Nav_Content}>
+        <form id="form" className={Style.Home_Nav_Content}>
           <h3>Sort By</h3>
 
           <input
@@ -58,7 +90,14 @@ const Home = () => {
             onChange={(e) => setSort(e.target.value)}
             id="recent"
           />
-          <label htmlFor="recent">Recent Task</label>
+          <label
+            data-tooltip-id="recent"
+            data-tooltip-content="Select to get Recently added tasks"
+            htmlFor="recent"
+          >Recent Task</label>
+          <ReactTooltip
+            place="right"
+            id="recent" />
           <br />
 
           <input
@@ -69,7 +108,14 @@ const Home = () => {
             onChange={(e) => setSort(e.target.value)}
             id="completed"
           />
-          <label htmlFor="completed">Completed Task</label>
+          <label
+            data-tooltip-id="completed"
+            data-tooltip-content="Select to get completed tasks"
+            htmlFor="completed"
+          >Completed Task</label>
+          <ReactTooltip
+            place="right"
+            id="completed" />
           <br />
 
           <input
@@ -80,9 +126,16 @@ const Home = () => {
             onChange={(e) => setSort(e.target.value)}
             id="pending"
           />
-          <label htmlFor="pending">Pending Task</label>
+          <label
+            htmlFor="pending"
+            data-tooltip-id="pending"
+            data-tooltip-content="Select to get Pending tasks"
+          >Pending Task</label>
+          <ReactTooltip
+            place="right"
+            id="pending" />
         </form>
-        <button className={Style.Night}></button>
+        <button  onClick={toggleTheme} className={Style.Night}><i class="fa-solid fa-circle-half-stroke"></i></button>
       </div>
 
       <div className={Style.Home_Content}>
@@ -90,12 +143,12 @@ const Home = () => {
 
         <div className={Style.Contents}>
           {filteredTodo.length === 0 ? (
-            <div className={Style.Items}>
+            <div id="items" className={Style.Items}>
               <input type="text" value="No Task Added" readOnly />
             </div>
           ) : (
             filteredTodo.map((t) => (
-              <div key={t.id} className={Style.Items}>
+              <div id="items" key={t.id} className={Style.Items}>
                 <input
                   value={t.text}
                   readOnly={!t.editable}
