@@ -105,3 +105,43 @@
     display: grid;
     place-content: center;
 }
+
+#menu{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: larger;
+}
+
+
+
+/* ====== LAPTOP (<= 1200px) ====== */
+@media (max-width: 1024px) {
+    .Home_Nav{
+        width: 30%;
+    }
+}
+
+/* ====== TABLET (<= 900px) ====== */
+@media (max-width: 768px) {
+    .Home_Nav{
+        display: none;
+        width: fit-content;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+    }
+    .Home_Content{
+        width: 100%;
+    }
+    
+}
+
+/* ====== MOBILE (<= 600px) ====== */
+@media (max-width: 426px) {
+    
+.Home_Oper i {
+    font-size: 0.8rem;
+}
+}

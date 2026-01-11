@@ -39,3 +39,35 @@
     /* font-weight: bold; */
     font-size: 1rem;
 }
+
+
+
+
+/* ====== LAPTOP (<= 1200px) ====== */
+@media (max-width: 1024px) {
+
+
+    .Input_Outer button {
+        font-size: 0.8rem;
+    }
+}
+
+/* ====== TABLET (<= 900px) ====== */
+@media (max-width: 768px) {
+    .Input_Outer {
+        width: 43vw;
+        height: 7vh;
+    }
+}
+
+/* ====== MOBILE (<= 600px) ====== */
+@media (max-width: 426px) {
+
+    .Input_Outer {
+        width: 60vw;
+        height: 7vh;
+    }
+    .Input_Outer button{
+        width: 25%;
+    }
+}

@@ -1,3 +1,4 @@
+/* ====== BASE (already yours, unchanged) ====== */
 .Landing_Outer {
     height: 100vh;
     width: 100vw;
@@ -11,7 +12,8 @@
 
 .Landing_first {
     height: 100vh;
-    width: 40%;
+    width: 35%;
+    margin-right: 10%;
     border-bottom-right-radius: 200%;
     display: grid;
     place-items: center;
@@ -26,13 +28,13 @@
 }
 
 .Landing_Second {
-    width: 50%;
+    width: 45%;
+    /* background-color: black; */
     height: 100%;
     display: grid;
 }
 
 .Landing_Second h1 {
-
     font-family: var(--Shrikhand);
     font-size: 2.8rem;
     margin-top: 15vh;
@@ -59,8 +61,6 @@
     height: 8vh;
     width: 20vw;
     border-radius: 35px;
-    outline: none;
-    border: none;
     background: var(--yello-shades);
     font-size: 1.3rem;
     font-weight: bold;
@@ -70,36 +70,126 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 1s ease-in-out;
-
-    &:hover {
-        /* background-color: black; */
-        color: var(--white);
-        background: var(--text-color);
-    }
+    transition: all 0.4s ease-in-out;
 }
 
-.balls {
-    position: fixed;
-
+.Landing_Second a:hover {
+    color: var(--white);
+    background: var(--text-color);
 }
 
 .balls_Big {
-    height: 300px;
-    width: 300px;
+    height: 275px;
+    width: 275px;
     border-radius: 50%;
-    background: var(--yello-shades);
+    background: var(--ball-color);
     position: fixed;
-    left: 30%;
-    top: 10%;
+    left: 25%;
+    top: 0%;
 }
 
 .balls_small {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    background: var(--yello-shades);
+    background: var(--ball-color);
     position: fixed;
-    left: 12%;
+    left: 5%;
     bottom: -8%;
+}
+
+/* ====== LAPTOP (<= 1200px) ====== */
+@media (max-width: 1024px) {
+    .balls_Big {
+        height: 230px;
+        width: 230px;
+        left: 22%;
+    }
+}
+
+/* ====== TABLET (<= 900px) ====== */
+@media (max-width: 768px) {
+
+    .Landing_first {
+        display: none;
+    }
+
+    .Landing_Second {
+        width: 100%;
+        padding: 5vh 0;
+        place-items: center;
+        text-align: center;
+        background-color: var(--light-yellow);
+    }
+
+    .Landing_Second h1 {
+        margin-top: 0;
+        font-size: 2.2rem;
+        z-index: 999;
+    }
+
+    .Landing_Second p {
+        z-index: 999;
+        width: 90%;
+        font-size: 1.1rem;
+    }
+
+    .Landing_Second a {
+        z-index: 999;
+        width: 40vw;
+        margin-left: 0;
+        background: var(--dark-yellow) ;
+    }
+
+    .balls_Big {
+        height: 220px;
+        width: 220px;
+        left: 80%;
+        top: 5%;
+        background: var(--dark-yellow);
+    }
+    
+    .balls_small {
+        background: var(--dark-yellow);
+        height: 150px;
+        width: 150px;
+        left: 5%;
+    }
+}
+
+/* ====== MOBILE (<= 600px) ====== */
+@media (max-width: 426px) {
+    .Landing_first {
+        height: 40vh;
+    }
+
+    .Landing_first p {
+        font-size: 1.3rem;
+        width: 90%;
+    }
+
+    .Landing_Second h1 {
+        font-size: 1.8rem;
+    }
+
+    .Landing_Second h4 {
+        font-size: 1rem;
+    }
+
+    .Landing_Second p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .Landing_Second a {
+        width: 70vw;
+        height: 7vh;
+        font-size: 1.1rem;
+    }
+
+    .balls_small {
+        top: 0;
+    }
+
+    
 }

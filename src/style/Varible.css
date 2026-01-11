@@ -2,6 +2,7 @@
     --yello-shades: linear-gradient(to bottom right, #ffd639, #e7a700);
     --light-yellow: #FCD12A;
     --dark-yellow: #FABB18;
+    --ball-color: radial-gradient(circle at top left, #FCD12A 0%, #FFC107);
     --white: #FFFFFF;
     --gray: #EEEEEE;
     --text-color: black;

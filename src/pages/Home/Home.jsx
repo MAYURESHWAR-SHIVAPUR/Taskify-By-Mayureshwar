@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Style from "./Home.module.css";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
@@ -17,7 +17,8 @@ gsap.registerPlugin(useGSAP);
 
 const Home = () => {
   const { toggleTheme } = useThemeToggle();
-  
+  const menu = useRef();
+
 
   // animation start
   useGSAP(
@@ -65,6 +66,15 @@ const Home = () => {
     dispatch(deleteTodo(id));
   };
 
+
+  // toggle show / hide (recommended)
+  const toggleMenu = () => {
+    menu.current.style.display =
+      menu.current.style.display === "block" ? "none" : "block";
+  };
+
+
+
   const filteredTodo = todo.filter((t) => {
     if (sort === "completed") return t.completed;
     if (sort === "pending") return !t.completed;
@@ -73,7 +83,21 @@ const Home = () => {
 
   return (
     <div className={Style.Home_Outer}>
-      <div className={Style.Home_Nav}>
+      {window.innerWidth < 768 &&
+        <>
+          <i
+            id={Style.menu}
+            onClick={toggleMenu} className="fa-solid fa-bars"
+
+            data-tooltip-id="menu"
+            data-tooltip-content="click to hide and show Menu"
+          ></i>
+          <ReactTooltip
+            place="left"
+            id="menu" />
+        </>
+      }
+      <div ref={menu} className={Style.Home_Nav}>
         <Heading
           title="TASKIFY"
           para={`${time < 12 ? "Good Morning" : "Good Evening"} ${name || "User"},`}
@@ -135,7 +159,14 @@ const Home = () => {
             place="right"
             id="pending" />
         </form>
-        <button  onClick={toggleTheme} className={Style.Night}><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button
+          data-tooltip-id="night"
+          data-tooltip-content="Click to switch themes (Dark/Light)"
+          onClick={toggleTheme} className={Style.Night}><i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+        <ReactTooltip
+          place="right"
+          id="night" />
       </div>
 
       <div className={Style.Home_Content}>
